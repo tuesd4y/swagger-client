@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,6 +18,26 @@
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="mi_close" mnemonicParsing="false" onAction="#close" text="Close" />
+              <MenuItem fx:id="mi_info" mnemonicParsing="false" onAction="#info" text="Info" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="mi_settings" mnemonicParsing="false" onAction="#settings" text="Settings" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="View">
+            <items>
+              <MenuItem fx:id="mi_fullscreen" mnemonicParsing="false" onAction="#fullscreen" text="Fullscreen" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
       <HBox alignment="BASELINE_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="Server URL">
@@ -22,10 +45,9 @@
                   <Insets left="5.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <TextField fx:id="tf_baseUrl" />
-            <Pane prefHeight="17.0" prefWidth="467.0" />
+            <TextField fx:id="tf_baseUrl" prefHeight="31.0" prefWidth="326.0" />
+            <Pane prefHeight="17.0" prefWidth="377.0" />
             <Button mnemonicParsing="false" onAction="#connect" text="Connect" />
-            <Label fx:id="lbl_swaggerVersion" layoutX="15.0" layoutY="20.0" text="s:version..." />
          </children>
       </HBox>
     <SplitPane dividerPositions="0.25" focusTraversable="true" minWidth="0.0" prefHeight="546.0" prefWidth="497.0" VBox.vgrow="ALWAYS">
@@ -36,12 +58,12 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
-                               <ListView fx:id="lv_resources" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                               <ListView fx:id="lv_resources" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
-                              <ListView fx:id="lv_methods" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                              <ListView fx:id="lv_methods" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                     </items>

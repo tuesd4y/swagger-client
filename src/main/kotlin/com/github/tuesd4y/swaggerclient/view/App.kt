@@ -1,4 +1,4 @@
-package com.github.tuesd4y.swaggerclient.views
+package com.github.tuesd4y.swaggerclient.view
 
 import tornadofx.App
 
