@@ -22,7 +22,5 @@ class RestResource(val path: String) {
         }
     }
 
-    override fun toString(): String {
-        return path
-    }
+    override fun toString() = path
 }

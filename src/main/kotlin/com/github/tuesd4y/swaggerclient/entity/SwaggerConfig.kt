@@ -1,9 +1,9 @@
 package com.github.tuesd4y.swaggerclient.entity
 
-import javafx.beans.property.ObjectProperty
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 import tornadofx.getProperty
+import tornadofx.onChange
 import tornadofx.property
 import javax.json.Json
 import javax.json.JsonObject
@@ -25,15 +25,24 @@ class SwaggerConfig {
         }
         get
 
-    var _swaggerVersion by property("")
-    val swaggerVersionProperty: ObjectProperty<String>
-            get() = getProperty(SwaggerConfig::_swaggerVersion)
+    var _swaggerVersion: String by property("")
+    val swaggerVersionProperty = getProperty(SwaggerConfig::_swaggerVersion)
 
+    var _selectedResource: RestResource by property(RestResource(""))
+    val selectedResourceProperty = getProperty(SwaggerConfig::_selectedResource).onChange {
+            restMethods.setAll(it!!.methods)
+        }
+
+    var _selectedMethod: RestMethod by property(RestMethod())
+    val selectedMethodProperty = getProperty(SwaggerConfig::_selectedMethod).onChange {
+    }
 
     val restResources: ObservableList<RestResource> = FXCollections.observableArrayList<RestResource>()
+    val restMethods: ObservableList<RestMethod> = FXCollections.observableArrayList<RestMethod>()
 
 
-    private fun getDataFromJson(): Set<RestResource> {
+    private fun getDataFromJson(): Set<RestResource>
+    {
         val resourcesObject = _jsonObject.getJsonObject("paths")
         val resourcesSet = mutableSetOf<RestResource>()
         resourcesObject.forEach { pathValue ->

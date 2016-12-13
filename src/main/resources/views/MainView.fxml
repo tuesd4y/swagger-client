@@ -28,27 +28,27 @@
             <Label fx:id="lbl_swaggerVersion" layoutX="15.0" layoutY="20.0" text="s:version..." />
          </children>
       </HBox>
-    <SplitPane dividerPositions="0.26169265033407574" focusTraversable="true" minWidth="0.0" prefHeight="546.0" prefWidth="497.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.25" focusTraversable="true" minWidth="0.0" prefHeight="546.0" prefWidth="497.0" VBox.vgrow="ALWAYS">
       <items>
             <AnchorPane>
                <children>
-                  <SplitPane dividerPositions="0.4742647058823529" orientation="VERTICAL">
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
-                              <ListView fx:id="lv_resources" />
+                               <ListView fx:id="lv_resources" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
-                              <ListView fx:id="lv_methods" />
+                              <ListView fx:id="lv_methods" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="684.0" />
+            <AnchorPane />
       </items>
     </SplitPane>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
