@@ -34,7 +34,8 @@ class MainView : View() {
 
     init {
         tf_baseUrl.text = "http://10.0.0.254:8080/werhats"
-        lbl_swaggerVersion.bind(swaggerConfig.swaggerVersion)
+        lbl_swaggerVersion.bind(swaggerConfig.swaggerVersionProperty)
         lv_resources.items = swaggerConfig.restResources
+
     }
 }
