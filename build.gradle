@@ -1,5 +1,5 @@
 group 'com.github.tuesd4y.swaggerclient'
-version '0.1'
+version '0.1b'
 
 buildscript {
     ext.kotlin_version = '1.0.5-2'
